@@ -6,17 +6,18 @@ import React from 'react';
 
 
 const FormUserDetails = (props) => {
-    const { handleChange, values, nextStep } = props
+    const { handleChange, nextStep } = props
+    const {firstName, lastName, email} = props.values;
     return (
         <MuiThemeProvider>
                 <React.Fragment>
                     <AppBar title="Personal Forms"/>
-                    <TextField hintText="Enter your First Name    "  floatingLabelText="First Name" onChange= {handleChange('firstName')} value= {values.firstName}/>
+                    <TextField hintText="Enter your First Name    "  floatingLabelText="First Name" onChange= {handleChange('firstName')} value= {firstName}/>
                     <br/>
-                    <TextField hintText="Enter your Last Name    "  floatingLabelText="Last Name" onChange= {handleChange('lastName')} value= {values.lastName}/>
+                    <TextField hintText="Enter your Last Name    "  floatingLabelText="Last Name" onChange= {handleChange('lastName')} value= {lastName}/>
                     <br/>
 
-                    <TextField hintText="Enter your Email    "  floatingLabelText="Email" onChange= {handleChange('email')} value= {values.email}/>
+                    <TextField hintText="Enter your Email    "  floatingLabelText="Email" onChange= {handleChange('email')} value= {email}/>
                     <br/>
                     <br/> 
                     <RaisedButton label="Continue" primary={true} onClick={nextStep}/>
